@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+
+  rabbitmq:
+    container_name: smart-city-rabbitmq
+    image: rabbitmq:3.7-management
+    restart: unless-stopped
+    ports:
+      - "5672:5672"
+      - "8181:15672"
+    env_file:
+      - .env
